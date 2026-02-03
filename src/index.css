@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Solar Tech Palette */
+  --primary-gradient: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  /* Amber to Dark Amber */
+  --bg-gradient: linear-gradient(180deg, #F8FAFC 0%, #FFF7ED 100%);
+  /* Slate 50 to Orange 50 */
+  --card-bg: #FFFFFF;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  --text-primary: #1E293B;
+  /* Slate 800 */
+  --text-secondary: #64748B;
+  /* Slate 500 */
+
+  --brand-orange: #F59E0B;
+  --brand-slate: #334155;
+  --success: #10B981;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Kanit', sans-serif;
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utilities */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid #E2E8F0;
+  padding: 24px;
+  margin-bottom: 24px;
+  transition: box-shadow 0.3s ease;
+}
+
+.btn {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.3);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.4);
+}
+
+.btn-secondary {
+  background: #F1F5F9;
+  color: #475569;
+  box-shadow: none;
+}
+
+.btn-secondary:hover {
+  background: #E2E8F0;
+  box-shadow: none;
+  transform: translateY(-1px);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--brand-slate);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .no-print,
+  .btn,
+  button {
+    display: none !important;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    break-inside: avoid;
+  }
+}
