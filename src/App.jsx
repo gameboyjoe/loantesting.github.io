@@ -7,7 +7,6 @@ import LoanOptions from './components/LoanOptions';
 import Proposal from './components/Proposal';
 import { PRICING_DATA } from './data/pricing';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 function App() {
   const [step, setStep] = useState(1);
@@ -46,7 +45,6 @@ function App() {
                 selectedId={selectedSystemId}
                 onSelect={(sys) => setSelectedSystemId(sys.id)}
               />
-              {/* Optional: Add Optimizer Toggle if needed, as per design */}
 
               <div style={{ marginTop: '24px' }}>
                 <button className="btn" onClick={nextStep}>
@@ -78,7 +76,7 @@ function App() {
             <div className="card" style={{ background: 'transparent', border: 'none', boxShadow: 'none' }}>
               <Proposal system={selectedSystem} params={loanParams} />
               <div className="no-print" style={{ marginTop: '16px', textAlign: 'center' }}>
-                <button className="btn btn-secondary" onClick={prevStep} style={{ background: 'white' }}>
+                <button className="btn btn-secondary" onClick={prevStep}>
                   ← แก้ไขข้อมูล
                 </button>
               </div>
